@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Yo it's tony
+          Tony's portfolio
         </a>
       </header>
     </div>
