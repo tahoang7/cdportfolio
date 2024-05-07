@@ -21,7 +21,7 @@ function App() {
 
         ctx.beginPath();
         ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-        ctx.strokeStyle = '#f0db4f';
+        ctx.strokeStyle = '#95DE5D';
         ctx.lineWidth = 8;
         ctx.stroke();
 
