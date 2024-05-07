@@ -6,25 +6,36 @@ function App() {
         const canvas = document.getElementById('logoCanvas');
         const ctx = canvas.getContext('2d');
 
+        // Set canvas size to fill the entire viewport
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
         // Draw background
         ctx.fillStyle = '#000';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Draw "TH" text
-        ctx.font = 'bold 120px Arial';
-        ctx.fillStyle = '#f0db4f';
-        ctx.fillText('TH', 120, 200);
+        // Draw circle
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = Math.min(centerX, centerY) * 0.8; // Adjust radius for better fitting
 
-        // Draw circle around text
         ctx.beginPath();
-        ctx.arc(200, 200, 90, 0, Math.PI * 2);
-        ctx.strokeStyle = '#f0db4f';
+        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+        ctx.strokeStyle = '#5DDE89';
         ctx.lineWidth = 8;
         ctx.stroke();
-    }, []); // Empty dependency array ensures useEffect runs only once after initial render
+
+        // Draw "TH" text
+        ctx.font = 'bold 60px Arial'; // Adjust font size for better fitting
+        ctx.fillStyle = '#5DDE89';
+        const textWidth = ctx.measureText('TH').width;
+        const textX = centerX - textWidth / 2;
+        const textY = centerY + 20; // Adjust vertical position for better fitting
+        ctx.fillText('TH', textX, textY);
+    }, []);
 
     return (
-        <canvas id="logoCanvas" width="400" height="400"></canvas>
+        <canvas id="logoCanvas" style={{ display: 'block' }}></canvas>
     );
 }
 
