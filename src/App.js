@@ -21,16 +21,16 @@ function App() {
 
         ctx.beginPath();
         ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-        ctx.strokeStyle = '#5DDE89';
+        ctx.strokeStyle = '#5DDE65';
         ctx.lineWidth = 8;
         ctx.stroke();
 
-        // Draw "TH" text
-        ctx.font = 'bold 60px Arial'; // Adjust font size for better fitting
-        ctx.fillStyle = '#5DDE89';
+        // Draw "TH" text with bigger font size
+        ctx.font = 'bold 80px Arial'; // Increased font size
+        ctx.fillStyle = '#5DDE65';
         const textWidth = ctx.measureText('TH').width;
         const textX = centerX - textWidth / 2;
-        const textY = centerY + 20; // Adjust vertical position for better fitting
+        const textY = centerY + 30; // Adjust vertical position for better fitting
         ctx.fillText('TH', textX, textY);
     }, []);
 
